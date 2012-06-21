@@ -1,7 +1,8 @@
 cache/*
 log/*
 web/uploads/*
-config/databases.yml
 /nbproject/
 /plugins/.registry/
 /plugins/.channels/
+.DS_Store
+config/.DS_Store
