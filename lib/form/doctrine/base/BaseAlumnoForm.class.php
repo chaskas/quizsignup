@@ -16,21 +16,23 @@ abstract class BaseAlumnoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'        => new sfWidgetFormInputHidden(),
-      'nombre'    => new sfWidgetFormInputText(),
-      'apellido'  => new sfWidgetFormInputText(),
-      'matricula' => new sfWidgetFormInputText(),
+      'user_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
       'carrera'   => new sfWidgetFormInputText(),
+      'matricula' => new sfWidgetFormInputText(),
       'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
       'id'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'nombre'    => new sfValidatorPass(),
-      'apellido'  => new sfValidatorPass(),
-      'matricula' => new sfValidatorPass(),
+      'user_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
       'carrera'   => new sfValidatorPass(),
+      'matricula' => new sfValidatorPass(),
       'grupo_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'))),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Alumno', 'column' => array('user_id')))
+    );
 
     $this->widgetSchema->setNameFormat('alumno[%s]');
 

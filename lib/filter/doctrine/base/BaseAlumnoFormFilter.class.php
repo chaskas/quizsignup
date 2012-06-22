@@ -13,18 +13,16 @@ abstract class BaseAlumnoFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'nombre'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'apellido'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'matricula' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'user_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'carrera'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'matricula' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'nombre'    => new sfValidatorPass(array('required' => false)),
-      'apellido'  => new sfValidatorPass(array('required' => false)),
-      'matricula' => new sfValidatorPass(array('required' => false)),
+      'user_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
       'carrera'   => new sfValidatorPass(array('required' => false)),
+      'matricula' => new sfValidatorPass(array('required' => false)),
       'grupo_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Grupo'), 'column' => 'id')),
     ));
 
@@ -46,10 +44,9 @@ abstract class BaseAlumnoFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'        => 'Number',
-      'nombre'    => 'Text',
-      'apellido'  => 'Text',
-      'matricula' => 'Text',
+      'user_id'   => 'ForeignKey',
       'carrera'   => 'Text',
+      'matricula' => 'Text',
       'grupo_id'  => 'ForeignKey',
     );
   }
