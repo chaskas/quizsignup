@@ -8,7 +8,7 @@ Grupo:
     modulo_id:      { type: integer, notnull: true }
     tutor_id:       { type: integer, notnull: true }
   relations:
-    Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id}
+    Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id }
     Tutor:          { onDelete: CASCADE, local: tutor_id, foreign: id }
 
 Alumno:
@@ -30,12 +30,22 @@ Tutor:
     apellido:       { type: text, notnull: true }
     email:          { type: text, notnull: true }
 
+Lesson:
+  columns:
+    nombre:         { type: text, notnull: true }
+    modulo_id:      { type: integer, notnull: true }
+  relations:
+    Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id }
+
 Quiz:
   columns:
     fecha_at:       { type: date, notnull: true }
     hora_ini:       { type: time, notnull: true }
     hora_fin:       { type: time, notnull: true }
     cupo:           { type: integer, notnull: true }
+    lesson_id:      { type: integer, notnull: true }
+  relations:
+    Lesson:         { onDelete: CASCADE, local: lesson_id, foreign: id }
 
 Laboratorio:
   columns:

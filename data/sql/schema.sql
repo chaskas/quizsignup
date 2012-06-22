@@ -3,8 +3,9 @@ CREATE TABLE alumno_quiz (id BIGINT AUTO_INCREMENT, alumno_id BIGINT NOT NULL, q
 CREATE TABLE grupo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, tutor_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), INDEX tutor_id_idx (tutor_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, capacidad BIGINT NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio_quiz (id BIGINT AUTO_INCREMENT, laboratorio_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX laboratorio_quiz_index_idx (laboratorio_id, quiz_id), INDEX laboratorio_id_idx (laboratorio_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE lesson (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE modulo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE quiz (id BIGINT AUTO_INCREMENT, fecha_at DATE NOT NULL, hora_ini TIME NOT NULL, hora_fin TIME NOT NULL, cupo BIGINT NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE quiz (id BIGINT AUTO_INCREMENT, fecha_at DATE NOT NULL, hora_ini TIME NOT NULL, hora_fin TIME NOT NULL, cupo BIGINT NOT NULL, lesson_id BIGINT NOT NULL, INDEX lesson_id_idx (lesson_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE tutor (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, apellido text NOT NULL, email text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE tutor_quiz (id BIGINT AUTO_INCREMENT, tutor_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX tutor_quiz_index_idx (tutor_id, quiz_id), INDEX tutor_id_idx (tutor_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -23,6 +24,8 @@ ALTER TABLE grupo ADD CONSTRAINT grupo_tutor_id_tutor_id FOREIGN KEY (tutor_id) 
 ALTER TABLE grupo ADD CONSTRAINT grupo_modulo_id_modulo_id FOREIGN KEY (modulo_id) REFERENCES modulo(id) ON DELETE CASCADE;
 ALTER TABLE laboratorio_quiz ADD CONSTRAINT laboratorio_quiz_quiz_id_quiz_id FOREIGN KEY (quiz_id) REFERENCES quiz(id) ON DELETE CASCADE;
 ALTER TABLE laboratorio_quiz ADD CONSTRAINT laboratorio_quiz_laboratorio_id_laboratorio_id FOREIGN KEY (laboratorio_id) REFERENCES laboratorio(id) ON DELETE CASCADE;
+ALTER TABLE lesson ADD CONSTRAINT lesson_modulo_id_modulo_id FOREIGN KEY (modulo_id) REFERENCES modulo(id) ON DELETE CASCADE;
+ALTER TABLE quiz ADD CONSTRAINT quiz_lesson_id_lesson_id FOREIGN KEY (lesson_id) REFERENCES lesson(id) ON DELETE CASCADE;
 ALTER TABLE tutor_quiz ADD CONSTRAINT tutor_quiz_tutor_id_tutor_id FOREIGN KEY (tutor_id) REFERENCES tutor(id) ON DELETE CASCADE;
 ALTER TABLE tutor_quiz ADD CONSTRAINT tutor_quiz_quiz_id_quiz_id FOREIGN KEY (quiz_id) REFERENCES quiz(id) ON DELETE CASCADE;
 ALTER TABLE sf_guard_forgot_password ADD CONSTRAINT sf_guard_forgot_password_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;

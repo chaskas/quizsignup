@@ -9,6 +9,8 @@
  * @property time $hora_ini
  * @property time $hora_fin
  * @property integer $cupo
+ * @property integer $lesson_id
+ * @property Lesson $Lesson
  * @property Doctrine_Collection $TutorQuiz
  * @property Doctrine_Collection $AlumnoQuiz
  * @property Doctrine_Collection $LaboratorioQuiz
@@ -17,6 +19,8 @@
  * @method time                getHoraIni()         Returns the current record's "hora_ini" value
  * @method time                getHoraFin()         Returns the current record's "hora_fin" value
  * @method integer             getCupo()            Returns the current record's "cupo" value
+ * @method integer             getLessonId()        Returns the current record's "lesson_id" value
+ * @method Lesson              getLesson()          Returns the current record's "Lesson" value
  * @method Doctrine_Collection getTutorQuiz()       Returns the current record's "TutorQuiz" collection
  * @method Doctrine_Collection getAlumnoQuiz()      Returns the current record's "AlumnoQuiz" collection
  * @method Doctrine_Collection getLaboratorioQuiz() Returns the current record's "LaboratorioQuiz" collection
@@ -24,6 +28,8 @@
  * @method Quiz                setHoraIni()         Sets the current record's "hora_ini" value
  * @method Quiz                setHoraFin()         Sets the current record's "hora_fin" value
  * @method Quiz                setCupo()            Sets the current record's "cupo" value
+ * @method Quiz                setLessonId()        Sets the current record's "lesson_id" value
+ * @method Quiz                setLesson()          Sets the current record's "Lesson" value
  * @method Quiz                setTutorQuiz()       Sets the current record's "TutorQuiz" collection
  * @method Quiz                setAlumnoQuiz()      Sets the current record's "AlumnoQuiz" collection
  * @method Quiz                setLaboratorioQuiz() Sets the current record's "LaboratorioQuiz" collection
@@ -54,11 +60,20 @@ abstract class BaseQuiz extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
+        $this->hasColumn('lesson_id', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Lesson', array(
+             'local' => 'lesson_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
+
         $this->hasMany('TutorQuiz', array(
              'local' => 'id',
              'foreign' => 'quiz_id'));
