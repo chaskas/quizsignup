@@ -23,4 +23,24 @@ class homeActions extends sfActions
   {
     $this->form = new PreInscriptionForm();
   }
+  public function executeCreate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST));
+
+    $this->form = new PreInscriptionForm();
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('PreInscription');
+  }
+  protected function processForm(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $alumno = $form->save();
+
+      $this->redirect('alumno/new');
+    }
+  }
 }
