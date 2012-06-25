@@ -19,4 +19,8 @@ class homeActions extends sfActions
   {
     
   }
+  public function executePreInscription(sfWebRequest $request)
+  {
+    $this->form = new PreInscriptionForm();
+  }
 }
