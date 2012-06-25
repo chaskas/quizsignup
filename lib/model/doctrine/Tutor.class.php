@@ -12,4 +12,8 @@
  */
 class Tutor extends BaseTutor
 {
+	public function __toString()
+  	{
+    	return $this->getNombre();
+ 	}
 }

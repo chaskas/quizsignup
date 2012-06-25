@@ -67,7 +67,7 @@ class labActions extends sfActions
     {
       $laboratorio = $form->save();
 
-      $this->redirect('lab/edit?id='.$laboratorio->getId());
+      $this->redirect('lab/index');
     }
   }
 }

@@ -9,14 +9,14 @@
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
   <?php echo $form->renderGlobalErrors() ?>
-  <div style="float: left;margin-left: 20px;width:48%;">
+  <div style="float: left;width:85%">
         <?php echo $form['nombre']->renderLabel() ?>
         <?php echo $form['nombre']->renderError() ?>
         <br/>
         <?php echo $form['nombre']->render(); ?>
   </div>
   <div class="clear"></div>
-  <div style="float: left;margin-left: 20px;width:48%;">
+  <div style="float: left;width:48%;">
         <?php echo $form['modulo_id']->renderLabel() ?>
         <?php echo $form['modulo_id']->renderError() ?>
         <br/>

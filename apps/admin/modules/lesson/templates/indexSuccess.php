@@ -23,11 +23,11 @@
                               <?php echo $lesson->getNombre(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $lesson->getModulo_id(); ?>
+                              <?php echo $lesson->getModulo(); ?>
                             </td>
                             <td class="center">
-                              <?php echo link_to(image_tag('/images/fugue/edit.png'),'quiz/edit?id='.$quiz->getId()); ?>
-                              <?php echo link_to(image_tag('/images/fugue/cross.png'),'quiz/delete?id='.$quiz->getId(),array('method'=>'delete','confirm'=>'Est&aacute;s seguro?')); ?>
+                              <?php echo link_to(image_tag('/images/fugue/edit.png'),'lesson/edit?id='.$lesson->getId()); ?>
+                              <?php echo link_to(image_tag('/images/fugue/cross.png'),'lesson/delete?id='.$lesson->getId(),array('method'=>'delete','confirm'=>'Est&aacute;s seguro?')); ?>
                           </tr>
                           <?php endforeach; ?>
                       </tbody>

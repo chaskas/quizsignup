@@ -67,7 +67,7 @@ class quizActions extends sfActions
     {
       $quiz = $form->save();
 
-      $this->redirect('quiz/edit?id='.$quiz->getId());
+      $this->redirect('quiz/index');
     }
   }
 }

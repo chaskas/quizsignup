@@ -67,7 +67,7 @@ class alumnoActions extends sfActions
     {
       $alumno = $form->save();
 
-      $this->redirect('alumno/edit?id='.$alumno->getId());
+      $this->redirect('alumno/index');
     }
   }
 }

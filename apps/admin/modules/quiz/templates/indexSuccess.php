@@ -35,7 +35,7 @@
                               <?php echo $quiz->getCupo(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $quiz->getLesson_id(); ?>                            
+                              <?php echo $quiz->getLesson(); ?>                            
                             </td>
                             <td class="center">
                               <?php echo link_to(image_tag('/images/fugue/edit.png'),'quiz/edit?id='.$quiz->getId()); ?>

@@ -67,7 +67,7 @@ class grupoActions extends sfActions
     {
       $grupo = $form->save();
 
-      $this->redirect('grupo/edit?id='.$grupo->getId());
+      $this->redirect('grupo/index');
     }
   }
 }

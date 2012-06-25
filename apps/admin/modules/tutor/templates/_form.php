@@ -12,12 +12,14 @@
         <br/>
         <?php echo $form['nombre']->render(array('style'=>'width:100%')); ?>
   </div>
-    <div style="float: left;margin-left: 20px;width:48%;">
+  <div class="clear"></div>
+    <div style="float: left;width:48%;">
         <?php echo $form['apellido']->renderLabel() ?>
         <?php echo $form['apellido']->renderError() ?>
         <br/>
         <?php echo $form['apellido']->render(array('style'=>'width:100%')); ?>
   </div>
+  <div class="clear"></div>
   <div style="float: left;width:48%;">
         <?php echo $form['email']->renderLabel() ?>
         <?php echo $form['email']->renderError() ?>

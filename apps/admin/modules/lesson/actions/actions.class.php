@@ -67,7 +67,7 @@ class lessonActions extends sfActions
     {
       $lesson = $form->save();
 
-      $this->redirect('lesson/edit?id='.$lesson->getId());
+      $this->redirect('lesson/index');
     }
   }
 }
