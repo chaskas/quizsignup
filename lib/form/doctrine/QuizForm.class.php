@@ -36,7 +36,7 @@ class QuizForm extends BaseQuizForm
       $cupos = 0;
       foreach ($forms as $key => $form)
       {
-        $cupos += 5;
+        $cupos += $form->getValue('capacidad');
       }
       $this->getObject()->setCupo($cupos);
       return parent::doSave($con);

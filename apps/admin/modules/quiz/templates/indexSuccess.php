@@ -23,13 +23,13 @@
                           <?php foreach($quizs as $quiz) : ?>
                           <tr>
                             <td class="center">
-                              <?php echo $quiz->getFecha_at(); ?>
+                              <?php $date = date_create($quiz->getFechaAt());echo date_format($date, 'd/m/Y'); ?>
                             </td>
                             <td class="center">
-                              <?php echo $quiz->getHora_ini(); ?>
+                              <?php $hour = date_create($quiz->getHoraIni());echo date_format($hour, 'H:i'); ?>
                             </td>
                             <td class="center">
-                              <?php echo $quiz->getHora_fin(); ?>
+                              <?php $hour = date_create($quiz->getHoraFin());echo date_format($hour, 'H:i'); ?>
                             </td>
                             <td class="center">
                               <?php echo $quiz->getCupo(); ?>
