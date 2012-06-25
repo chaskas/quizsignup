@@ -28,16 +28,40 @@
 
                 <ul class="sf-menu">
                 <?php if ($sf_user->isAuthenticated()): ?>
-                  <li <?php if($sf_context->getModuleName()=='quiz') echo "class='active'"; ?>>
-                    <a href="#">
+                  <li <?php if($sf_context->getModuleName()=='alumno') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("alumno/index"); ?>">
                       <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
-                      <span class="title">Quiz</span>
+                      <span class="title">Alumnos</span>
                     </a>
                   </li>
-                  <li <?php if($sf_context->getModuleName()=='alumno') echo "class='active'"; ?>>
-                    <a href="#">
+                  <li <?php if($sf_context->getModuleName()=='tutor') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("tutor/index"); ?>">
                       <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
-                      <span class="title">Mis Datos</span>
+                      <span class="title">Tutores</span>
+                    </a>
+                  </li>
+                  <li <?php if($sf_context->getModuleName()=='quiz') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("quiz/index"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">Quizzes</span>
+                    </a>
+                  </li>
+                  <li <?php if($sf_context->getModuleName()=='modulo') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("modulo/index"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">M&oacute;dulos</span>
+                    </a>
+                  </li>
+                  <li <?php if($sf_context->getModuleName()=='grupo') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("grupo/index"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">Grupos</span>
+                    </a>
+                  </li>
+                  <li <?php if($sf_context->getModuleName()=='lab') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("lab/index"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">Laboratorios</span>
                     </a>
                   </li>
                   <li>
