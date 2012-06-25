@@ -14,6 +14,6 @@ class Lesson extends BaseLesson
 {
 	public function __toString()
   	{
- 	   return $this->getNombre();
+ 	   return $this->getModulo()." - ".$this->getNombre();
 	}
 }

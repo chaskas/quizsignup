@@ -13,13 +13,15 @@ abstract class BaseLaboratorioFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'nombre'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'capacidad' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'nombre'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'capacidad'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'quizs_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Quiz')),
     ));
 
     $this->setValidators(array(
-      'nombre'    => new sfValidatorPass(array('required' => false)),
-      'capacidad' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'nombre'     => new sfValidatorPass(array('required' => false)),
+      'capacidad'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'quizs_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Quiz', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('laboratorio_filters[%s]');
@@ -31,6 +33,24 @@ abstract class BaseLaboratorioFormFilter extends BaseFormFilterDoctrine
     parent::setup();
   }
 
+  public function addQuizsListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.LaboratorioQuiz LaboratorioQuiz')
+      ->andWhereIn('LaboratorioQuiz.quiz_id', $values)
+    ;
+  }
+
   public function getModelName()
   {
     return 'Laboratorio';
@@ -39,9 +59,10 @@ abstract class BaseLaboratorioFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'        => 'Number',
-      'nombre'    => 'Text',
-      'capacidad' => 'Number',
+      'id'         => 'Number',
+      'nombre'     => 'Text',
+      'capacidad'  => 'Number',
+      'quizs_list' => 'ManyKey',
     );
   }
 }

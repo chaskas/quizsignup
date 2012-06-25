@@ -46,11 +46,22 @@ Quiz:
     lesson_id:      { type: integer, notnull: true }
   relations:
     Lesson:         { onDelete: CASCADE, local: lesson_id, foreign: id }
+    Laboratorio:
+      alias: Laboratorios
+      refClass: LaboratorioQuiz
+      local: quiz_id
+      foreign: laboratorio_id
 
 Laboratorio:
   columns:
     nombre:         { type: text, notnull: true }
     capacidad:      { type: integer, notnull: true }
+  relations:
+    Quiz:
+      alias: Quizs
+      refClass: LaboratorioQuiz
+      local: laboratorio_id
+      foreign: quiz_id
 
 TutorQuiz:
   columns:

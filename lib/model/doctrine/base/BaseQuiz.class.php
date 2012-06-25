@@ -11,6 +11,7 @@
  * @property integer $cupo
  * @property integer $lesson_id
  * @property Lesson $Lesson
+ * @property Doctrine_Collection $Laboratorios
  * @property Doctrine_Collection $TutorQuiz
  * @property Doctrine_Collection $AlumnoQuiz
  * @property Doctrine_Collection $LaboratorioQuiz
@@ -21,6 +22,7 @@
  * @method integer             getCupo()            Returns the current record's "cupo" value
  * @method integer             getLessonId()        Returns the current record's "lesson_id" value
  * @method Lesson              getLesson()          Returns the current record's "Lesson" value
+ * @method Doctrine_Collection getLaboratorios()    Returns the current record's "Laboratorios" collection
  * @method Doctrine_Collection getTutorQuiz()       Returns the current record's "TutorQuiz" collection
  * @method Doctrine_Collection getAlumnoQuiz()      Returns the current record's "AlumnoQuiz" collection
  * @method Doctrine_Collection getLaboratorioQuiz() Returns the current record's "LaboratorioQuiz" collection
@@ -30,6 +32,7 @@
  * @method Quiz                setCupo()            Sets the current record's "cupo" value
  * @method Quiz                setLessonId()        Sets the current record's "lesson_id" value
  * @method Quiz                setLesson()          Sets the current record's "Lesson" value
+ * @method Quiz                setLaboratorios()    Sets the current record's "Laboratorios" collection
  * @method Quiz                setTutorQuiz()       Sets the current record's "TutorQuiz" collection
  * @method Quiz                setAlumnoQuiz()      Sets the current record's "AlumnoQuiz" collection
  * @method Quiz                setLaboratorioQuiz() Sets the current record's "LaboratorioQuiz" collection
@@ -73,6 +76,11 @@ abstract class BaseQuiz extends sfDoctrineRecord
              'local' => 'lesson_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasMany('Laboratorio as Laboratorios', array(
+             'refClass' => 'LaboratorioQuiz',
+             'local' => 'quiz_id',
+             'foreign' => 'laboratorio_id'));
 
         $this->hasMany('TutorQuiz', array(
              'local' => 'id',

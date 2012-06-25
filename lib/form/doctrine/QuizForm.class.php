@@ -17,10 +17,13 @@ class QuizForm extends BaseQuizForm
     
     $this->widgetSchema['hora_ini'] = new sfWidgetFormI18nTime(array('culture'=>'es'));
     
+    //$this->setDefault('cupo', );
+    
     $this->widgetSchema->setLabels(array(
       'fecha_at'=>'Fecha',
       'hora_ini'=>'Hora inicio',
-      'hora_fin'=>'Hora fin'
+      'hora_fin'=>'Hora fin',
+      'laboratorios_list' => 'Lista de Laboratorios'
       ));
   }
 }
