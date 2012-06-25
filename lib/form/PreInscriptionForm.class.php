@@ -9,7 +9,7 @@ class PreInscriptionForm extends sfForm
     ));
 
     $this->setValidators(array(
-      'matricula' => new sfValidatorString(array('required' => true)),
+      'matricula' => new sfValidatorNumber(array('required' => true,'max'=>9999999999)),
     ));
 
     $this->widgetSchema->setNameFormat('alumno[%s]');

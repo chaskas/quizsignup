@@ -13,6 +13,9 @@ class alumnoActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
   }
+  public function executeHome(sfWebRequest $request)
+  {
+  }
 
   public function executeNew(sfWebRequest $request)
   {
@@ -65,6 +68,28 @@ class alumnoActions extends sfActions
       $alumno = $form->save();
 
       $this->redirect('alumno/edit?id='.$alumno->getId());
+    }
+  }
+  public function executePreInscription(sfWebRequest $request)
+  {
+    $this->form = new PreInscriptionForm();
+  }
+  public function executePreCreate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST));
+
+    $this->form = new PreInscriptionForm();
+
+    $this->processPreForm($request, $this->form);
+
+    $this->setTemplate('PreInscription');
+  }
+  protected function processPreForm(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $this->redirect('alumno/new');
     }
   }
 }

@@ -1,5 +1,14 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/08-Security
 
-all:
+default:
   is_secure: true
+
+preInscription:
+    is_secure: false
+preCreate:
+    is_secure: false
+processPreForm:
+    is_secure: false
+home:
+  is_secure: false
