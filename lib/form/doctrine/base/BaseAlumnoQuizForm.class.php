@@ -7,7 +7,7 @@
  *
  * @package    quizsignup
  * @subpackage form
- * @author     Your name here
+ * @author     Rodrigo Campos H. <contacto@webdevel.cl>
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BaseAlumnoQuizForm extends BaseFormDoctrine
