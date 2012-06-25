@@ -15,6 +15,12 @@
         <br/>
         <?php echo $form['nombre']->render(); ?>
   </div>
+  <div style="float: left;width:85%">
+        <?php echo $form['descripcion']->renderLabel() ?>
+        <?php echo $form['descripcion']->renderError() ?>
+        <br/>
+        <?php echo $form['descripcion']->render(); ?>
+  </div>
   <div class="clear"></div>
   <div style="float: left;width:48%;">
         <?php echo $form['modulo_id']->renderLabel() ?>

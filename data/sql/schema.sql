@@ -3,7 +3,7 @@ CREATE TABLE alumno_quiz (id BIGINT AUTO_INCREMENT, alumno_id BIGINT NOT NULL, q
 CREATE TABLE grupo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, tutor_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), INDEX tutor_id_idx (tutor_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, capacidad BIGINT NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio_quiz (id BIGINT AUTO_INCREMENT, laboratorio_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX laboratorio_quiz_index_idx (laboratorio_id, quiz_id), INDEX laboratorio_id_idx (laboratorio_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE lesson (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE lesson (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion text NOT NULL, modulo_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE modulo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE quiz (id BIGINT AUTO_INCREMENT, fecha_at DATE NOT NULL, hora_ini TIME NOT NULL, hora_fin TIME NOT NULL, cupo BIGINT NOT NULL, lesson_id BIGINT NOT NULL, INDEX lesson_id_idx (lesson_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE tutor (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, apellido text NOT NULL, email text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;

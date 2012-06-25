@@ -13,13 +13,15 @@ abstract class BaseLessonFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'nombre'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'modulo_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Modulo'), 'add_empty' => true)),
+      'nombre'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'descripcion' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'modulo_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Modulo'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'nombre'    => new sfValidatorPass(array('required' => false)),
-      'modulo_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Modulo'), 'column' => 'id')),
+      'nombre'      => new sfValidatorPass(array('required' => false)),
+      'descripcion' => new sfValidatorPass(array('required' => false)),
+      'modulo_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Modulo'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('lesson_filters[%s]');
@@ -39,9 +41,10 @@ abstract class BaseLessonFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'        => 'Number',
-      'nombre'    => 'Text',
-      'modulo_id' => 'ForeignKey',
+      'id'          => 'Number',
+      'nombre'      => 'Text',
+      'descripcion' => 'Text',
+      'modulo_id'   => 'ForeignKey',
     );
   }
 }

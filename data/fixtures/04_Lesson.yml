@@ -1,0 +1,37 @@
+Lesson:
+  l1:
+    nombre: Lesson 1
+    descripcion: how do u say 'Hola'
+    Modulo: m1
+  l2:
+    nombre: Lesson 2
+    descripcion: how do u say 'Chao'
+    Modulo: m1
+  l3:
+    nombre: Lesson 8
+    descripcion: how do u say 'Aprobe'
+    Modulo: m2
+  l4:
+    nombre: Lesson 9
+    descripcion: how do u say 'Reprobe'
+    Modulo: m2
+  l5:
+    nombre: Lesson 15
+    descripcion: how do u say 'No hice las tareas'
+    Modulo: m3
+  l6:
+    nombre: Lesson 16
+    descripcion: how do u say 'No fui al quiz'
+    Modulo: m3
+  l7:
+    nombre: Lesson 22
+    descripcion: how do u say 'No fui a la entrevista'
+    Modulo: m4
+  l8:
+    nombre: Lesson 23
+    descripcion: how do u say 'Congele la carrera'
+    Modulo: m4
+  l9:
+    nombre: Lesson 50
+    descripcion: how do u say 'Me eche la carrera :('
+    Modulo: m1

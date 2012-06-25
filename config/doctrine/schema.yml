@@ -33,6 +33,7 @@ Tutor:
 Lesson:
   columns:
     nombre:         { type: text, notnull: true }
+    descripcion:    { type: text, notnull: true }
     modulo_id:      { type: integer, notnull: true }
   relations:
     Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id }

@@ -15,10 +15,6 @@ class QuizForm extends BaseQuizForm
     $this->widgetSchema['fecha_at'] = new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/fugue/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true}', 'culture' => 'es'));
     $this->widgetSchema['fecha_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');
     
-    $this->widgetSchema['hora_ini'] = new sfWidgetFormI18nTime(array('culture'=>'es'));
-    
-    //$this->setDefault('cupo', );
-    
     unset($this['cupo']);
     
     $this->widgetSchema->setLabels(array(
@@ -30,16 +26,16 @@ class QuizForm extends BaseQuizForm
   }
   protected function doSave($con = null)
   {
-    if($this->getObject()->isNew())
+
+    $labs = $this->getValue('laboratorios_list');
+    $cupos = 0;
+    foreach($labs as $key => $labId)
     {
-      $forms = $this->embeddedForms;
-      $cupos = 0;
-      foreach ($forms as $key => $form)
-      {
-        $cupos += $form->getValue('capacidad');
-      }
-      $this->getObject()->setCupo($cupos);
-      return parent::doSave($con);
+      $lab = Doctrine::getTable('Laboratorio')->find($labId);
+      $cupos = $cupos + $lab->getCapacidad();
     }
+    $this->getObject()->setCupo($cupos);
+    
+    return parent::doSave($con);
   }
 }
