@@ -1,6 +1,6 @@
 <div class="grid_16 widget first">
         <div class="widget_title clearfix">
-            <h2>Laboratorios</h2>
+            <h2>Modulos</h2>
             <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
               <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="<?php echo url_for('modulo/new'); ?>">Nuevo</a></li>
             </ul>
@@ -12,6 +12,7 @@
                       <thead>
                         <tr>
                           <td class="center">Nombre</td>
+                          <td class="center">Opciones</td>
                         </tr>
                       </thead>
                       <tbody>
