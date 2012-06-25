@@ -12,4 +12,8 @@
  */
 class Modulo extends BaseModulo
 {
+  public function __toString()
+  {
+    return $this->getNombre();
+  }
 }
