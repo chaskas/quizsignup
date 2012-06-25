@@ -1,0 +1,16 @@
+Laboratorio:
+  l1:
+    nombre:    MP1
+    capacidad: 30
+  l2:
+    nombre:    MP2
+    capacidad: 25
+  l3:
+    nombre:    MP3
+    capacidad: 40
+  l4:
+    nombre:    IS Lab Redes
+    capacidad: 10
+  l5:
+    nombre:    IS Lab Ingenieria de software
+    capacidad: 5
