@@ -1,0 +1,17 @@
+Grupo:
+  g1:
+    nombre: Grupo A
+    Modulo: m1
+    Tutor:  t1
+  g2:
+    nombre: Grupo B
+    Modulo: m2
+    Tutor:  t2
+  g3:
+    nombre: Grupo C
+    Modulo: m3
+    Tutor:  t3
+  g4:
+    nombre: Grupo D
+    Modulo: m4
+    Tutor:  t3
