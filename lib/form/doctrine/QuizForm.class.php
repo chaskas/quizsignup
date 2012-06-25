@@ -33,10 +33,10 @@ class QuizForm extends BaseQuizForm
     if($this->getObject()->isNew())
     {
       $forms = $this->embeddedForms;
-      $cupos;
+      $cupos = 0;
       foreach ($forms as $key => $form)
       {
-        $cupos += $form['capacidad']->getValue();
+        $cupos += 5;
       }
       $this->getObject()->setCupo($cupos);
       return parent::doSave($con);
