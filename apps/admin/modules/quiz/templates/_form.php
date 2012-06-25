@@ -37,12 +37,12 @@
         <?php echo $form['lesson_id']; ?>
   </div>
   <div class="clear"></div>
-  <div style="float: left;margin-left: 20px;width:48%;">
-        <?php echo $form['cupo']->renderLabel() ?>
-        <?php echo $form['cupo']->renderError() ?>
+  <!-- <div style="float: left;margin-left: 20px;width:48%;">
+        <?php //echo $form['cupo']->renderLabel() ?>
+        <?php //echo $form['cupo']->renderError() ?>
         <br/>
-        <?php echo $form['cupo']; ?>
-  </div>
+        <?php //echo $form['cupo']; ?>
+  </div> -->
   <div class="clear"></div>
   <div style="float: left;margin-left: 20px;width:48%;">
         <?php echo $form['laboratorios_list']->renderLabel() ?>

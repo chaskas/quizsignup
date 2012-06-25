@@ -19,11 +19,27 @@ class QuizForm extends BaseQuizForm
     
     //$this->setDefault('cupo', );
     
+    unset($this['cupo']);
+    
     $this->widgetSchema->setLabels(array(
       'fecha_at'=>'Fecha',
       'hora_ini'=>'Hora inicio',
       'hora_fin'=>'Hora fin',
       'laboratorios_list' => 'Lista de Laboratorios'
       ));
+  }
+  protected function doSave($con = null)
+  {
+    if($this->getObject()->isNew())
+    {
+      $forms = $this->embeddedForms;
+      $cupos;
+      foreach ($forms as $key => $form)
+      {
+        $cupos += $form['capacidad']->getValue();
+      }
+      $this->getObject()->setCupo($cupos);
+      return parent::doSave($con);
+    }
   }
 }
