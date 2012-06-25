@@ -46,6 +46,12 @@
                       <span class="title">Quizzes</span>
                     </a>
                   </li>
+                  <li <?php if($sf_context->getModuleName()=='lesson') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("lesson/index"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">Lessons</span>
+                    </a>
+                  </li>
                   <li <?php if($sf_context->getModuleName()=='modulo') echo "class='active'"; ?>>
                     <a href="<?php echo url_for("modulo/index"); ?>">
                       <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
