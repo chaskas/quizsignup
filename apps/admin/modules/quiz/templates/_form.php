@@ -1,34 +1,42 @@
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
 <div style="margin:15px;">
-<form action="<?php echo url_for('lab/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
+<form action="<?php echo url_for('quiz/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
   <?php echo $form->renderGlobalErrors() ?>
   <div style="float: left;width:48%;">
-        <?php echo $form['nombre']->renderLabel() ?>
-        <?php echo $form['nombre']->renderError() ?>
+        <?php echo $form['fecha_at']->renderLabel() ?>
+        <?php echo $form['fecha_at']->renderError() ?>
         <br/>
-        <?php echo $form['nombre']->render(array('style'=>'width:100%')); ?>
+        <?php echo $form['fecha_at']->render(array('style'=>'width:100%')); ?>
   </div>
-
   <div style="float: left;margin-left: 20px;width:48%;">
-        <?php echo $form['capacidad']->renderLabel() ?>
-        <?php echo $form['capacidad']->renderError() ?>
+        <?php echo $form['hora_ini']->renderLabel() ?>
+        <?php echo $form['hora_ini']->renderError() ?>
         <br/>
-        <?php echo $form['capacidad']->render(array('style'=>'width:100%')); ?>
+        <?php echo $form['hora_ini']->render(array('style'=>'width:100%')); ?>
   </div>
-  
-  
+  <div style="float: left;width:48%;">
+        <?php echo $form['hora_fin']->renderLabel() ?>
+        <?php echo $form['hora_fin']->renderError() ?>
+        <br/>
+        <?php echo $form['hora_fin']->render(array('style'=>'width:100%')); ?>
+  </div>
+  <div style="float: left;margin-left: 20px;width:48%;">
+        <?php echo $form['cupo']->renderLabel() ?>
+        <?php echo $form['cupo']->renderError() ?>
+        <br/>
+        <?php echo $form['cupo']->render(array('style'=>'width:100%')); ?>
+  </div>
   <div class="clear"></div>
   <?php echo $form->renderHiddenFields(false) ?>
-  &nbsp;<a href="<?php echo url_for('lab/index') ?>">Volver</a>
+  &nbsp;<a href="<?php echo url_for('quiz/index') ?>">Volver</a>
   <?php if (!$form->getObject()->isNew()): ?>
-    &nbsp;<?php echo link_to('Borrar', 'lab/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Est&aacute;s seguro?')) ?>
+    &nbsp;<?php echo link_to('Borrar', 'quiz/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Est&aacute;s seguro?')) ?>
   <?php endif; ?>
   <br/>
   <input type="submit" value="Guardar" style="float: right;"/>
-  
 </form>
 </div>

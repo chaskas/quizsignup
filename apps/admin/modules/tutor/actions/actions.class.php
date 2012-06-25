@@ -67,7 +67,7 @@ class tutorActions extends sfActions
     {
       $tutor = $form->save();
 
-      $this->redirect('tutor/edit?id='.$tutor->getId());
+      $this->redirect('tutor/index');
     }
   }
 }
