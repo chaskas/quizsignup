@@ -12,15 +12,12 @@
         <br/>
         <?php echo $form['nombre']->render(array('style'=>'width:100%')); ?>
   </div>
-
   <div style="float: left;margin-left: 20px;width:48%;">
         <?php echo $form['capacidad']->renderLabel() ?>
         <?php echo $form['capacidad']->renderError() ?>
         <br/>
         <?php echo $form['capacidad']->render(array('style'=>'width:100%')); ?>
   </div>
-  
-  
   <div class="clear"></div>
   <?php echo $form->renderHiddenFields(false) ?>
   &nbsp;<a href="<?php echo url_for('lab/index') ?>">Volver</a>
@@ -29,6 +26,5 @@
   <?php endif; ?>
   <br/>
   <input type="submit" value="Guardar" style="float: right;"/>
-  
 </form>
 </div>
