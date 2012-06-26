@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Modulo:
   columns:
     nombre:         { type: text, notnull: true }
@@ -101,14 +100,10 @@ LaboratorioQuiz:
       fields:     [laboratorio_id,quiz_id]
       type:       unique
 
-
 Carrera:
   columns:
     nombre:         { type: text, notnull: true }
 
-
-
-=======
 Modulo:
   columns:
     nombre:         { type: text, notnull: true }
@@ -210,10 +205,3 @@ LaboratorioQuiz:
     laboratorio_quiz_index:
       fields:     [laboratorio_id,quiz_id]
       type:       unique
-
-
-
-
-
-
->>>>>>> Listo Formulario de Inscripcion, falto agregar listado de carreras
