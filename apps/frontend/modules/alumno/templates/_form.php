@@ -26,11 +26,11 @@
         <?php echo $form['sfGuardUser']['last_name']->render(array('style'=>'width:100%')); ?>
   </div>
   <div class="clear"></div>
-  <div style="float: left;width:62%;">
-        <?php echo $form['carrera']->renderLabel() ?>
-        <?php echo $form['carrera']->renderError() ?>
+  <div style="float: left;width:64%;">
+        <?php echo $form['carrera_id']->renderLabel() ?>
+        <?php echo $form['carrera_id']->renderError() ?>
         <br/>
-        <?php echo $form['carrera']->render(array('style'=>'width:100%')); ?>
+        <?php echo $form['carrera_id']->render(array('style'=>'width:100%')); ?>
   </div>
   <div class="clear"></div>
   <div style="float: left;width:30%;">

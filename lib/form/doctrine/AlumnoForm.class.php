@@ -18,7 +18,7 @@ class AlumnoForm extends BaseAlumnoForm
     $this->validatorSchema['matricula']   = new sfValidatorNumber(array('required'=>true,'max'=>9999999999));
     
     $this->widgetSchema['matricula']->setLabel('Matr&iacute;cula');
-    $this->widgetSchema['carrera']->setLabel('Carrera');
+    $this->widgetSchema['carrera_id']->setLabel('Carrera');
     
     $this->widgetSchema['sfGuardUser']['first_name']->setLabel('Nombre');
     $this->widgetSchema['sfGuardUser']['last_name']->setLabel('Apellido');

@@ -13,17 +13,17 @@ abstract class BaseAlumnoFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'user_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
-      'carrera'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'matricula' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => true)),
+      'user_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
+      'carrera_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Carrera'), 'add_empty' => true)),
+      'matricula'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'grupo_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'user_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
-      'carrera'   => new sfValidatorPass(array('required' => false)),
-      'matricula' => new sfValidatorPass(array('required' => false)),
-      'grupo_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Grupo'), 'column' => 'id')),
+      'user_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
+      'carrera_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Carrera'), 'column' => 'id')),
+      'matricula'  => new sfValidatorPass(array('required' => false)),
+      'grupo_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Grupo'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('alumno_filters[%s]');
@@ -43,11 +43,11 @@ abstract class BaseAlumnoFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'        => 'Number',
-      'user_id'   => 'ForeignKey',
-      'carrera'   => 'Text',
-      'matricula' => 'Text',
-      'grupo_id'  => 'ForeignKey',
+      'id'         => 'Number',
+      'user_id'    => 'ForeignKey',
+      'carrera_id' => 'ForeignKey',
+      'matricula'  => 'Text',
+      'grupo_id'   => 'ForeignKey',
     );
   }
 }

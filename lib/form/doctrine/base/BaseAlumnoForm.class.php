@@ -15,19 +15,19 @@ abstract class BaseAlumnoForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'        => new sfWidgetFormInputHidden(),
-      'user_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
-      'carrera'   => new sfWidgetFormInputText(),
-      'matricula' => new sfWidgetFormInputText(),
-      'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => true)),
+      'id'         => new sfWidgetFormInputHidden(),
+      'user_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
+      'carrera_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Carrera'), 'add_empty' => false)),
+      'matricula'  => new sfWidgetFormInputText(),
+      'grupo_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'id'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'user_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
-      'carrera'   => new sfValidatorPass(),
-      'matricula' => new sfValidatorPass(),
-      'grupo_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'required' => false)),
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'user_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
+      'carrera_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Carrera'))),
+      'matricula'  => new sfValidatorPass(),
+      'grupo_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'))),
     ));
 
     $this->validatorSchema->setPostValidator(

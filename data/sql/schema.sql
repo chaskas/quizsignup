@@ -1,4 +1,4 @@
-CREATE TABLE alumno (id BIGINT AUTO_INCREMENT, user_id BIGINT UNIQUE NOT NULL, carrera text NOT NULL, matricula VARCHAR(10) NOT NULL, grupo_id BIGINT, INDEX user_id_idx (user_id), INDEX grupo_id_idx (grupo_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE alumno (id BIGINT AUTO_INCREMENT, user_id BIGINT UNIQUE NOT NULL, carrera_id BIGINT NOT NULL, matricula VARCHAR(10) NOT NULL, grupo_id BIGINT NOT NULL, INDEX user_id_idx (user_id), INDEX grupo_id_idx (grupo_id), INDEX carrera_id_idx (carrera_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE alumno_quiz (id BIGINT AUTO_INCREMENT, alumno_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX alumno_quiz_index_idx (alumno_id, quiz_id), INDEX alumno_id_idx (alumno_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE carrera (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE grupo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, tutor_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), INDEX tutor_id_idx (tutor_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -19,6 +19,7 @@ CREATE TABLE sf_guard_user_group (user_id BIGINT, group_id BIGINT, created_at DA
 CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(user_id, permission_id)) ENGINE = INNODB;
 ALTER TABLE alumno ADD CONSTRAINT alumno_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE alumno ADD CONSTRAINT alumno_grupo_id_grupo_id FOREIGN KEY (grupo_id) REFERENCES grupo(id) ON DELETE CASCADE;
+ALTER TABLE alumno ADD CONSTRAINT alumno_carrera_id_carrera_id FOREIGN KEY (carrera_id) REFERENCES carrera(id) ON DELETE CASCADE;
 ALTER TABLE alumno_quiz ADD CONSTRAINT alumno_quiz_quiz_id_quiz_id FOREIGN KEY (quiz_id) REFERENCES quiz(id) ON DELETE CASCADE;
 ALTER TABLE alumno_quiz ADD CONSTRAINT alumno_quiz_alumno_id_alumno_id FOREIGN KEY (alumno_id) REFERENCES alumno(id) ON DELETE CASCADE;
 ALTER TABLE grupo ADD CONSTRAINT grupo_tutor_id_tutor_id FOREIGN KEY (tutor_id) REFERENCES tutor(id) ON DELETE CASCADE;
