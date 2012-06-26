@@ -16,7 +16,7 @@ Alumno:
     user_id:        { type: integer, notnull: true, unique: true }
     carrera_id:     { type: integer, notnull: true }
     matricula:      { type: varchar(10), notnull: true }
-    grupo_id:       { type: integer, notnull: true }
+    grupo_id:       { type: integer, notnull: false }
   relations:
     sfGuardUser:    { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id, foreignType: one, foreignAlias: Alumno }
     Grupo:          { onDelete: CASCADE, local: grupo_id, foreign: id }
