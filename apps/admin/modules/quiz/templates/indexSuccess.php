@@ -14,7 +14,7 @@
                           <td class="center">Fecha</td>
                           <td class="center">Hora Inicio</td>
                           <td class="center">Hora Fin</td>
-                          <td class="center">Cupo</td>
+                          <td class="center">Cupos Restantes</td>
                           <td class="center">Lesson</td>
                           <td class="center">Opciones</td>
                         </tr>

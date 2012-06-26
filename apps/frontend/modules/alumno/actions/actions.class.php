@@ -43,26 +43,8 @@ class alumnoActions extends sfActions
       $this->redirect('@homepage');
     }
   }
-  public function executePreInscription(sfWebRequest $request)
+  public function executeInscribirQuiz()
   {
-    $this->form = new PreInscriptionForm();
-  }
-  public function executePreCreate(sfWebRequest $request)
-  {
-    $this->forward404Unless($request->isMethod(sfRequest::POST));
-
-    $this->form = new PreInscriptionForm();
-
-    $this->processPreForm($request, $this->form);
-
-    $this->setTemplate('PreInscription');
-  }
-  protected function processPreForm(sfWebRequest $request, sfForm $form)
-  {
-    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
-    if ($form->isValid())
-    {
-      $this->redirect('alumno/new');
-    }
+    //mostrar listados de quiz activos segun lesson y user_id.
   }
 }

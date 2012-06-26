@@ -15,6 +15,8 @@ class AlumnoForm extends BaseAlumnoForm
     
     $this->embedRelation('sfGuardUser','UserRegisterForm');
     
+    //$this->widgetSchema['carrera_id'] = new sfWidgetFormDoctrineChoice(array('model'=>'CarreraTable','method'=>'getCarreras'));
+    
     $this->validatorSchema['matricula']   = new sfValidatorNumber(array('required'=>true,'max'=>9999999999));
     
     $this->widgetSchema['matricula']->setLabel('Matr&iacute;cula');
