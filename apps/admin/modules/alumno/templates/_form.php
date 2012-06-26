@@ -1,53 +1,31 @@
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
-
+<div style="margin:15px;">
 <form action="<?php echo url_for('alumno/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
-  <table>
-    <tfoot>
-      <tr>
-        <td colspan="2">
-          <?php echo $form->renderHiddenFields(false) ?>
-          &nbsp;<a href="<?php echo url_for('alumno/index') ?>">Back to list</a>
-          <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'alumno/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
-          <?php endif; ?>
-          <input type="submit" value="Save" />
-        </td>
-      </tr>
-    </tfoot>
-    <tbody>
-      <?php echo $form->renderGlobalErrors() ?>
-      <tr>
-        <th><?php echo $form['user_id']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['user_id']->renderError() ?>
-          <?php echo $form['user_id'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['carrera']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['carrera']->renderError() ?>
-          <?php echo $form['carrera'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['matricula']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['matricula']->renderError() ?>
-          <?php echo $form['matricula'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['grupo_id']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['grupo_id']->renderError() ?>
-          <?php echo $form['grupo_id'] ?>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <?php echo $form->renderGlobalErrors() ?>
+  <div style="float: left;width:48%;">
+        <?php echo $form['carrera_id']->renderLabel() ?>
+        <?php echo $form['carrera_id']->renderError() ?>
+        <br/>
+        <?php echo $form['carrera_id']->render(array('style'=>'width:100%')); ?>
+  </div>
+  <div class="clear"></div>
+  <div style="float: left;width:48%;">
+        <?php echo $form['matricula']->renderLabel() ?>
+        <?php echo $form['matricula']->renderError() ?>
+        <br/>
+        <?php echo $form['matricula']->render(array('style'=>'width:100%')); ?>
+  </div>
+  <div class="clear"></div> 
+  <?php echo $form->renderHiddenFields(false) ?>
+  &nbsp;<a href="<?php echo url_for('alumno/index') ?>">Volver</a>
+  <?php if (!$form->getObject()->isNew()): ?>
+    &nbsp;<?php echo link_to('Borrar', 'alumno/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Est&aacute;s seguro?')) ?>
+  <?php endif; ?>
+  <br/>
+  <input type="submit" value="Guardar" style="float: right;"/>
 </form>
+</div>

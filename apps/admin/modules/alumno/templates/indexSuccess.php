@@ -11,27 +11,38 @@
                     <table class="simple">
                       <thead>
                         <tr>
+                          <td class="center">Nombre</td>
+                          <td class="center">Apellido</td>
+                          <td class="center">Correo</td>
+                          <td class="center">Usuario</td>
                           <td class="center">Carerra</td>
                           <td class="center">Matricula</td>
+                          <td class="center">Grupo</td>
                         </tr>
                       </thead>
                       <tbody>
                           <?php foreach($alumnos as $alumno) : ?>
                           <tr>
                             <td class="center">
-                              <?php echo $alumno->getFecha_at(); ?>
+                              <?php echo $alumno->getSfGuardUser()->getFirstName(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $alumno->getHora_ini(); ?>
+                              <?php echo $alumno->getSfGuardUser()->getLastName(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $alumno->getHora_fin(); ?>
+                              <?php echo $alumno->getSfGuardUser()->getEmailAddress(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $alumno->getCupo(); ?>
+                              <?php echo $alumno->getSfGuardUser()->getUsername(); ?>
                             </td>
                             <td class="center">
-                              <?php echo $alumno->getLesson_id(); ?>                            
+                              <?php echo $alumno->getCarrera(); ?>                            
+                            </td>
+                            <td class="center">
+                              <?php echo $alumno->getMatricula(); ?>                            
+                            </td>
+                            <td class="center">
+                              <?php echo $alumno->getGrupo(); ?>                            
                             </td>
                             <td class="center">
                               <?php echo link_to(image_tag('/images/fugue/edit.png'),'alumno/edit?id='.$alumno->getId()); ?>
