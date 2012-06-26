@@ -1,1 +1,22 @@
-probando 
+Super mega imba quiz sign up que llevamos un 20% del total :D!
+
+
+
+TAREAS POR REALIZAR:
+
+- Alumno se inscribe en un Quiz
+- Tutor agrega un alumno a un grupo
+- Tutor ve/descarga lista de alumnos de un grupo
+- Tutor habilita lessons (agregar atributo disponible type: boolean en Lessons)
+- Agregar columna password_plana en Alumno
+- Corregir permisos de usuario para app admin.php (Tutor, ListasEduc )
+- Tutor ve/descarga listas de alumnos inscritos para un Quiz
+- Alumno modifica sus datos
+- JS: rellena datos AlumnoForm llamando webservice
+- Usuario ListasEduc descarga listas 
+
+
+
+
+
+Si faltan más, agregarlas!
