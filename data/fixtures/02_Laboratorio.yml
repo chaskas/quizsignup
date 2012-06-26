@@ -1,16 +1,13 @@
 Laboratorio:
   l1:
-    nombre:    MP1
+    nombre:    CD1
     capacidad: 30
   l2:
-    nombre:    MP2
+    nombre:    CD2
     capacidad: 25
   l3:
-    nombre:    MP3
+    nombre:    CD3
     capacidad: 40
-  l4:
-    nombre:    IS Lab Redes
-    capacidad: 10
-  l5:
-    nombre:    IS Lab Ingenieria de software
-    capacidad: 5
+  l3:
+    nombre:    CD4
+    capacidad: 20

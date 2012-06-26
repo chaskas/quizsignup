@@ -101,7 +101,9 @@ LaboratorioQuiz:
       type:       unique
 
 
-
+Carrera:
+  columns:
+    nombre:         { type: text, notnull: true }
 
 
 

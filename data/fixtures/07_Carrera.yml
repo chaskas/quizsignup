@@ -1,0 +1,183 @@
+Carrera:
+  c1:
+    nombre: Antropología
+  c2:
+    nombre: Arquitectura
+  c3:
+    nombre: Artes Visuales
+  c4:
+    nombre: Astronomía
+  c5:
+    nombre: Auditoría
+  c6:
+    nombre: Bachillerato en Humanidades
+  c7:
+    nombre: Bioingeniería
+  c8:
+    nombre: Biología
+  c9:
+    nombre: Biología Marina
+  c10:
+    nombre: Bioquímica
+  c11:
+    nombre: Ciencias Físicas
+  c12:
+    nombre: Ciencias Políticas y Administrativas
+  c13:
+    nombre: Derecho
+  c14:
+    nombre: Educación Básica
+  c15:
+    nombre: Educación Diferencial
+  c16:
+    nombre: Educación Parvularia
+  c17:
+    nombre: Enfermería
+  c18:
+    nombre: Fonoaudiología
+  c19:
+    nombre: Geofísica
+  c20:
+    nombre: Geografía
+  c21:
+    nombre: Geología
+  c22:
+    nombre: Ingeniería Ambiental
+  c23:
+    nombre: Ingeniería Civil   
+  c24:
+    nombre: Primer Año Común
+  c25:
+    nombre: Ingeniería Civil 	  
+  c26:
+    nombre: Ingeniería Civil Aeroespacial
+  c27:
+    nombre: Ingeniería Civil Biomédica
+  c28:
+    nombre: Ingeniería Civil Eléctrica
+  c29:
+    nombre: Ingeniería Civil Electrónica
+  c30:
+    nombre: Ingeniería Civil de Materiales
+  c31:
+    nombre: Ingeniería Civil en Telecomunicaciones
+  c32:
+    nombre: Ingeniería Civil Industrial
+  c33:
+    nombre: Ingeniería Civil Informática
+  c34:
+    nombre: Ingeniería Civil Matemática
+  c35:
+    nombre: Ingeniería Civil Mecánica
+  c36:
+    nombre: Ingeniería Civil Metalúrgica
+  c37:
+    nombre: Ingeniería Civil Química
+  c38:
+    nombre: Ingeniería Comercial
+  c39:
+    nombre: Ingeniería en Conservación de Recursos Naturales
+  c40:
+    nombre: Ingeniería en Biotecnología Marina y Acuicultura
+  c41:
+    nombre: Ingeniería en Biotecnología Vegetal
+  c42:
+    nombre: Ingeniería Estadística
+  c43:
+    nombre: Ingeniería Forestal
+  c44:
+    nombre: Kinesiología
+  c45:
+    nombre: Licenciatura en Historia
+  c46:
+    nombre: Licenciatura en Matemática
+  c47:
+    nombre: Licenciatura en Química  
+  c48:
+    nombre: Químico
+  c49:
+    nombre: Medicina
+  c50:
+    nombre: Medicina Veterinaria 	  
+  c51:
+    nombre: Nutrición y Dietética
+  c52:
+    nombre: Obstetricia y Puericultura
+  c53:
+    nombre: Odontología
+  c54:
+    nombre: Pedagogía en Artes Plásticas
+  c55:
+    nombre: Pedagogía en Cs. Naturales y Biología
+  c56:
+    nombre: Pedagogía en Cs. Naturales y Física
+  c57:
+    nombre: Pedagogía en Cs. Naturales y Química
+  c58:
+    nombre: Pedagogía en Ed. Física
+  c59:
+    nombre: Pedagogía en Ed. Musical
+  c60:
+    nombre: Pedagogía en Español
+  c61:
+    nombre: Pedagogía en Filosofía
+  c62:
+    nombre: Pedagogía en Historia y Geografía
+  c63:
+    nombre: Pedagogía en Inglés
+  c64:
+    nombre: Pedagogía en Matemática y Computación
+  c65:
+    nombre: Periodismo
+  c66:
+    nombre: Psicología
+  c67:
+    nombre: Química y Farmacia
+  c68:
+    nombre: Químico Analista
+  c69:
+    nombre: Sociología
+  c70:
+    nombre: Tecnología Médica
+  c71:
+    nombre: Trabajo Social
+  c72:
+    nombre: Traducción/Interpretación en Idiomas Extranjeros
+  c73:
+    nombre: Agronomía
+  c74:
+    nombre: Derecho
+  c75:
+    nombre: Ingeniería Agroindustrial
+  c76:
+    nombre: Ingeniería Ambiental
+  c77:
+    nombre: Ingeniería Civil Agrícola
+  c78:
+    nombre: Ingeniería Comercial
+  c79:
+    nombre: Ingeniería en Alimentos
+  c80:
+    nombre: Medicina Veterinaria
+  c81:
+    nombre: Auditoría   
+  c82:
+    nombre: Diurna
+  c83:
+    nombre: Educación Básica
+  c84:
+    nombre: Educación Diferencial
+  c85:
+    nombre: Educación Parvularia
+  c86:
+    nombre: Ingeniería Comercial
+  c87:
+    nombre: Ingeniería en Biotecnología Vegetal
+  c88:
+    nombre: Ingeniería en Prevención de Riesgos
+  c89:
+    nombre: Ingeniería Geomática
+  c90:
+    nombre: Pedagogía en Ciencias Naturales y Biología
+  c91:
+    nombre: Pedagogía en Matemática y Educación Tecnológica

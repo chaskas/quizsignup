@@ -1,5 +1,6 @@
 CREATE TABLE alumno (id BIGINT AUTO_INCREMENT, user_id BIGINT UNIQUE NOT NULL, carrera text NOT NULL, matricula VARCHAR(10) NOT NULL, grupo_id BIGINT NOT NULL, INDEX user_id_idx (user_id), INDEX grupo_id_idx (grupo_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE alumno_quiz (id BIGINT AUTO_INCREMENT, alumno_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX alumno_quiz_index_idx (alumno_id, quiz_id), INDEX alumno_id_idx (alumno_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE carrera (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE grupo (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, modulo_id BIGINT NOT NULL, tutor_id BIGINT NOT NULL, INDEX modulo_id_idx (modulo_id), INDEX tutor_id_idx (tutor_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, capacidad BIGINT NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE laboratorio_quiz (id BIGINT AUTO_INCREMENT, laboratorio_id BIGINT NOT NULL, quiz_id BIGINT NOT NULL, UNIQUE INDEX laboratorio_quiz_index_idx (laboratorio_id, quiz_id), INDEX laboratorio_id_idx (laboratorio_id), INDEX quiz_id_idx (quiz_id), PRIMARY KEY(id)) ENGINE = INNODB;

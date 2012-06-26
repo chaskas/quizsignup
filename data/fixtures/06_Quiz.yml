@@ -4,40 +4,40 @@ Quiz:
     hora_ini: '10:00'
     hora_fin: '11:00'
     cupo:     60
-    Lesson:   l1
+    Lesson:   l11
   q2:
     fecha_at: '2012-06-17'
     hora_ini: '14:00'
     hora_fin: '15:00'
     cupo:     30
-    Lesson:   l2
+    Lesson:   l5
   q3:
     fecha_at: '2012-06-18'
     hora_ini: '10:00'
     hora_fin: '11:00'
     cupo:     40
-    Lesson:   l3
+    Lesson:   l5
   q4:
     fecha_at: '2012-06-19'
     hora_ini: '21:00'
     hora_fin: '22:00'
     cupo:     1
-    Lesson:   l1
+    Lesson:   l16
   q5:
     fecha_at: '2012-06-21'
     hora_ini: '14:00'
     hora_fin: '15:00'
     cupo:     100
-    Lesson:   l4
+    Lesson:   l16
   q6:
     fecha_at: '2012-06-27'
     hora_ini: '10:30'
     hora_fin: '11:30'
     cupo:     25
-    Lesson:   l5
+    Lesson:   l21
   q7:
     fecha_at: '2012-08-30'
     hora_ini: '10:00'
     hora_fin: '22:00'
     cupo:     50
-    Lesson:   l6
+    Lesson:   l11

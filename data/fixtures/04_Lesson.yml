@@ -1,37 +1,97 @@
 Lesson:
   l1:
     nombre: Lesson 1
-    descripcion: how do u say 'Hola'
+    descripcion: Meeting people
     Modulo: m1
   l2:
     nombre: Lesson 2
-    descripcion: how do u say 'Chao'
+    descripcion: Personal information
     Modulo: m1
   l3:
-    nombre: Lesson 8
-    descripcion: how do u say 'Aprobe'
-    Modulo: m2
-  l4:
-    nombre: Lesson 9
-    descripcion: how do u say 'Reprobe'
-    Modulo: m2
-  l5:
-    nombre: Lesson 15
-    descripcion: how do u say 'No hice las tareas'
-    Modulo: m3
-  l6:
-    nombre: Lesson 16
-    descripcion: how do u say 'No fui al quiz'
-    Modulo: m3
-  l7:
-    nombre: Lesson 22
-    descripcion: how do u say 'No fui a la entrevista'
-    Modulo: m4
-  l8:
-    nombre: Lesson 23
-    descripcion: how do u say 'Congele la carrera'
-    Modulo: m4
-  l9:
-    nombre: Lesson 50
-    descripcion: how do u say 'Me eche la carrera :('
+    nombre: Lesson 3
+    descripcion: Jobs & Unit 1
     Modulo: m1
+  l4:
+    nombre: Lesson 4
+    descripcion: Daily activities
+    Modulo: m1
+  l5:
+    nombre: Lesson 5
+    descripcion: Directions
+    Modulo: m1
+  l6:
+    nombre: Lesson 6
+    descripcion: Shop till you drop & Unit 2
+    Modulo: m1
+  l7:
+    nombre: Lesson 7
+    descripcion: Family and friends
+    Modulo: m2
+  l8:
+    nombre: Lesson 8
+    descripcion: Description of people
+    Modulo: m2
+  l9:
+    nombre: Lesson 9
+    descripcion: Description of places and things & Unit 1
+    Modulo: m2
+  l10:
+    nombre: Lesson 10
+    descripcion: Leisure activities
+    Modulo: m2
+  l11:
+    nombre: Lesson 11
+    descripcion: Going out
+    Modulo: m2
+  l12:
+    nombre: Lesson 12
+    descripcion: Amazing experiences & Unit 2
+    Modulo: m2
+  l13:
+    nombre: Lesson 13
+    descripcion: Your place in the global community
+    Modulo: m3
+  l14:
+    nombre: Lesson 14
+    descripcion: Flying away
+    Modulo: m3
+  l15:
+    nombre: Lesson 15
+    descripcion: Settling in & Unit 1
+    Modulo: m3
+  l16:
+    nombre: Lesson 16
+    descripcion: Running errands
+    Modulo: m3
+  l17:
+    nombre: Lesson 17
+    descripcion: Staying healthy
+    Modulo: m3
+  l18:
+    nombre: Lesson 18
+    descripcion: Getting to know new people & Unit 2
+    Modulo: m3
+  l19:
+    nombre: Lesson 19
+    descripcion: Understanding relationships
+    Modulo: m4
+  l20:
+    nombre: Lesson 20
+    descripcion: Global issues
+    Modulo: m4
+  l21:
+    nombre: Lesson 21
+    descripcion: Social events and festivities
+    Modulo: m4
+  l22:
+    nombre: Lesson 22
+    descripcion: Finding employment
+    Modulo: m4
+  l23:
+    nombre: Lesson 23
+    descripcion: Professional scenarios
+    Modulo: m4
+  l24:
+    nombre: Lesson 24
+    descripcion: Moving forward
+    Modulo: m4
