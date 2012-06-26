@@ -14,12 +14,13 @@ Grupo:
 Alumno:
   columns:
     user_id:        { type: integer, notnull: true, unique: true }
-    carrera:        { type: text, notnull: true }
+    carrera_id:     { type: integer, notnull: true }
     matricula:      { type: varchar(10), notnull: true }
     grupo_id:       { type: integer, notnull: true }
   relations:
     sfGuardUser:    { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id, foreignType: one, foreignAlias: Alumno }
     Grupo:          { onDelete: CASCADE, local: grupo_id, foreign: id }
+    Carrera:        { onDelete: CASCADE, local: carrera_id, foreign: id }
 
   # usuario_perfil integer NOT NULL,
   # usuario_estado integer NOT NULL,
