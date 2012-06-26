@@ -44,19 +44,19 @@
 		            <?php if ($sf_user->isAuthenticated()): ?>
                   <li <?php if($sf_context->getModuleName()=='quiz' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
                     <a href="#">
-                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/quiz.png','size=18x18'); ?></span>
                       <span class="title">Quiz</span>
                     </a>
                   </li>
                   <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
                     <a href="#">
-                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/misdatos.png','size=18x18'); ?></span>
                       <span class="title">Mis Datos</span>
                     </a>
                   </li>
                   <li>
                     <a href="<?php echo url_for("@sf_guard_signout"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/logout.png','size=18x18'); ?></span>
                       <span class="title">Logout</span>
                     </a>
                   </li>
