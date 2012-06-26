@@ -27,47 +27,31 @@
                 <div id="navclose"></div>
 
                 <ul class="sf-menu">
-                <?php if ($sf_user->isAuthenticated()): ?>
-                  <li <?php if($sf_context->getModuleName()=='alumno') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("alumno/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/alumno.png','size=18x18'); ?></span>
-                      <span class="title">Alumnos</span>
+		            <?php if (!$sf_user->isAuthenticated()): ?>
+                  <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='new') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("alumno/new"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/settings.png'); ?></span>
+                      <span class="title">Registrar</span>
                     </a>
                   </li>
-                  <li <?php if($sf_context->getModuleName()=='tutor') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("tutor/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/tutor.png','size=18x18'); ?></span>
-                      <span class="title">Tutores</span>
+                  <li <?php if($sf_context->getModuleName()=='sfGuardAuth') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("@sf_guard_signin"); ?>">
+                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="title">Login</span>
                     </a>
                   </li>
-                  <li <?php if($sf_context->getModuleName()=='quiz') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("quiz/index"); ?>">
+		            <?php endif; ?>
+		            <?php if ($sf_user->isAuthenticated()): ?>
+                  <li <?php if($sf_context->getModuleName()=='quiz' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
+                    <a href="#">
                       <span class="icon"><?php echo image_tag('menu/quiz.png','size=18x18'); ?></span>
-                      <span class="title">Quizzes</span>
+                      <span class="title">Quiz</span>
                     </a>
                   </li>
-                  <li <?php if($sf_context->getModuleName()=='lesson') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("lesson/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/lessons.png','size=18x18'); ?></span>
-                      <span class="title">Lessons</span>
-                    </a>
-                  </li>
-                  <li <?php if($sf_context->getModuleName()=='grupo') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("grupo/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/grupos.png','size=18x18'); ?></span>
-                      <span class="title">Grupos</span>
-                    </a>
-                  </li>
-                  <li <?php if($sf_context->getModuleName()=='modulo') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("modulo/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/modulos.png','size=18x18'); ?></span>
-                      <span class="title">M&oacute;dulos</span>
-                    </a>
-                  </li>
-                  <li <?php if($sf_context->getModuleName()=='lab') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("lab/index"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/laboratorios.png','size=18x18'); ?></span>
-                      <span class="title">Laboratorios</span>
+                  <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
+                    <a href="#">
+                      <span class="icon"><?php echo image_tag('menu/misdatos.png','size=18x18'); ?></span>
+                      <span class="title">Mis Datos</span>
                     </a>
                   </li>
                   <li>
@@ -76,7 +60,7 @@
                       <span class="title">Logout</span>
                     </a>
                   </li>
-                <?php endif; ?>
+		            <?php endif; ?>
                 </ul>
               </div>
             </nav>
