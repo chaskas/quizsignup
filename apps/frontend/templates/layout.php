@@ -30,7 +30,7 @@
 		            <?php if (!$sf_user->isAuthenticated()): ?>
                   <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='new') echo "class='active'"; ?>>
                     <a href="<?php echo url_for("alumno/new"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/people_family.png','size=16x16'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/settings.png'); ?></span>
                       <span class="title">Registrar</span>
                     </a>
                   </li>
