@@ -11,7 +11,6 @@ TAREAS POR REALIZAR:
 - Agregar columna password_plana en Alumno
 - Corregir permisos de usuario para app admin.php (Tutor, ListasEduc )
 - Tutor ve/descarga listas de alumnos inscritos para un Quiz
-- Alumno modifica sus datos
 - JS: rellena datos AlumnoForm llamando webservice
 - Usuario ListasEduc descarga listas 
 
@@ -19,4 +18,4 @@ TAREAS POR REALIZAR:
 
 
 
-Si faltan más, agregarlas!
+Si faltan mas, agregarlas!

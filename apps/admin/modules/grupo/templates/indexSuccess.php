@@ -12,7 +12,7 @@
                       <thead>
                         <tr>
                           <td class="center">Nombre</td>
-                          <td class="center">Modulo</td>
+                          <td class="center">M&oacute;dulo</td>
                           <td class="center">Tutor</td>
                           <td class="center">Opciones</td>
                         </tr>

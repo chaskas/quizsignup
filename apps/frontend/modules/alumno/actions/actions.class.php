@@ -47,4 +47,28 @@ class alumnoActions extends sfActions
   {
     //mostrar listados de quiz activos segun lesson y user_id.
   }
+  public function executeProfile(sfWebRequest $request)
+  {
+    $this->forward404Unless($alumno = $this->getUser()->getGuardUser()->getAlumno(), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
+    $this->formProfile = new AlumnoProfileForm($alumno);
+  }
+  public function executeUpdate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
+    $this->forward404Unless($alumno = $this->getUser()->getGuardUser()->getAlumno(), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
+    $this->formProfile = new AlumnoProfileForm($alumno);
+
+    $this->processFormProfile($request, $this->formProfile);
+
+    $this->setTemplate('profile');
+  }
+  protected function processFormProfile(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $alumno = $form->save();
+      $this->getUser()->setFlash('confirmation','Has actualizado tu perfil correctamente.');
+    }
+  }
 }

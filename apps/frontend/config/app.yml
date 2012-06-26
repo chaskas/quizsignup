@@ -5,3 +5,4 @@
 all:
   sf_guard_plugin:
     success_signin_url:      alumno/home
+    success_signout_url:      alumno/home

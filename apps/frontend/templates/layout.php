@@ -49,7 +49,7 @@
                     </a>
                   </li>
                   <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
-                    <a href="#">
+                    <a href="<?php echo url_for("alumno/profile"); ?>">
                       <span class="icon"><?php echo image_tag('menu/misdatos.png','size=18x18'); ?></span>
                       <span class="title">Mis Datos</span>
                     </a>
@@ -71,8 +71,14 @@
 <!--          <ul class="breadcrumbs first">
             <li><a href="#">Home</a></li>
             <li class="active"><a href="#">Autores</a></li>
-          </ul>-->
+	    </ul>-->
 
+	<?php if ($sf_user->hasFlash('confirmation')): ?>
+	  <div class="msg success">
+	    <span><?php echo $sf_user->getFlash('confirmation') ?></span>
+	    <a href="#" class="close">x</a>
+	  </div>
+	  <?php endif ?>
           <div class="clear"></div>
 
           <?php echo $sf_content ?>

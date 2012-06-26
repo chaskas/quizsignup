@@ -12,8 +12,8 @@
                       <thead>
                         <tr>
                           <td class="center">Nombre</td>
-                          <td class="center">Modulo</td>
-                          <td class="center">Descripcion</td>
+                          <td class="center">Descripci&oacute;n</td>
+                          <td class="center">M&oacute;dulo</td>
                           <td class="center">Opciones</td>
                         </tr>
                       </thead>

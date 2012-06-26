@@ -36,14 +36,14 @@ class alumnoActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
     $this->forward404Unless($alumno = Doctrine_Core::getTable('Alumno')->find(array($request->getParameter('id'))), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
-    $this->form = new AlumnoForm($alumno);
+    $this->form = new AlumnoProfileForm($alumno);
   }
 
   public function executeUpdate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
     $this->forward404Unless($alumno = Doctrine_Core::getTable('Alumno')->find(array($request->getParameter('id'))), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
-    $this->form = new AlumnoForm($alumno);
+    $this->form = new AlumnoProfileForm($alumno);
 
     $this->processForm($request, $this->form);
 
