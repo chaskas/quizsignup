@@ -28,8 +28,8 @@
 
                 <ul class="sf-menu">
 		  <?php if (!$sf_user->isAuthenticated()): ?>
-                  <li <?php if($sf_context->getModuleName()=='home' && $sf_context->getActionName()=='preInscription') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("home/preInscription"); ?>">
+                  <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='preInscription') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("alumno/preInscription"); ?>">
                       <span class="icon"><?php echo image_tag('menu/settings.png'); ?></span>
                       <span class="title">Registrar</span>
                     </a>

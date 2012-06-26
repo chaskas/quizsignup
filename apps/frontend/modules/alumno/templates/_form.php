@@ -20,34 +20,9 @@
     </tfoot>
     <tbody>
       <?php echo $form->renderGlobalErrors() ?>
-      <tr>
-        <th><?php echo $form['user_id']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['user_id']->renderError() ?>
-          <?php echo $form['user_id'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['carrera']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['carrera']->renderError() ?>
-          <?php echo $form['carrera'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['matricula']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['matricula']->renderError() ?>
-          <?php echo $form['matricula'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['grupo_id']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['grupo_id']->renderError() ?>
-          <?php echo $form['grupo_id'] ?>
-        </td>
-      </tr>
+
+      <?php echo $form; ?>
+
     </tbody>
   </table>
 </form>

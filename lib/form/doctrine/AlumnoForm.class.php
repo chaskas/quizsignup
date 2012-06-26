@@ -12,5 +12,15 @@ class AlumnoForm extends BaseAlumnoForm
 {
   public function configure()
   {
+    
+    $this->embedRelation('sfGuardUser','UserRegisterForm');
+    
+    $this->validatorSchema['matricula']   = new sfValidatorNumber(array('required'=>true,'max'=>9999999999));
+    $this->validatorSchema['carrera']     = new sfValidatorString(array('required'=>true));
+    
+    unset(
+      $this['user_id'],
+      $this['grupo_id']
+    );
   }
 }
