@@ -30,13 +30,13 @@
 		            <?php if (!$sf_user->isAuthenticated()): ?>
                   <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='new') echo "class='active'"; ?>>
                     <a href="<?php echo url_for("alumno/new"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/settings.png'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/register.png','size=18x18'); ?></span>
                       <span class="title">Registrar</span>
                     </a>
                   </li>
                   <li <?php if($sf_context->getModuleName()=='sfGuardAuth') echo "class='active'"; ?>>
                     <a href="<?php echo url_for("@sf_guard_signin"); ?>">
-                      <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
+                      <span class="icon"><?php echo image_tag('menu/login.png','size=18x18'); ?></span>
                       <span class="title">Login</span>
                     </a>
                   </li>
