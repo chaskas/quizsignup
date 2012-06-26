@@ -54,7 +54,7 @@ abstract class BaseAlumno extends sfDoctrineRecord
              ));
         $this->hasColumn('grupo_id', 'integer', null, array(
              'type' => 'integer',
-             'notnull' => true,
+             'notnull' => false,
              ));
     }
 

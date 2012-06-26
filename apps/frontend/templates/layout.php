@@ -27,21 +27,21 @@
                 <div id="navclose"></div>
 
                 <ul class="sf-menu">
-		  <?php if (!$sf_user->isAuthenticated()): ?>
-                  <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='preInscription') echo "class='active'"; ?>>
-                    <a href="<?php echo url_for("alumno/preInscription"); ?>">
+		            <?php if (!$sf_user->isAuthenticated()): ?>
+                  <li <?php if($sf_context->getModuleName()=='alumno' && $sf_context->getActionName()=='new') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("alumno/new"); ?>">
                       <span class="icon"><?php echo image_tag('menu/settings.png'); ?></span>
                       <span class="title">Registrar</span>
                     </a>
                   </li>
-                  <li <?php if($sf_context->getModuleName()=='alumno') echo "class='active'"; ?>>
-                    <a>
+                  <li <?php if($sf_context->getModuleName()=='sfGuardAuth') echo "class='active'"; ?>>
+                    <a href="<?php echo url_for("@sf_guard_signin"); ?>">
                       <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
                       <span class="title">Login</span>
                     </a>
                   </li>
-		  <?php endif; ?>
-		  <?php if ($sf_user->isAuthenticated()): ?>
+		            <?php endif; ?>
+		            <?php if ($sf_user->isAuthenticated()): ?>
                   <li <?php if($sf_context->getModuleName()=='quiz' && $sf_context->getActionName()=='alumno') echo "class='active'"; ?>>
                     <a href="#">
                       <span class="icon"><?php echo image_tag('menu/tables.png'); ?></span>
@@ -60,7 +60,7 @@
                       <span class="title">Logout</span>
                     </a>
                   </li>
-		  <?php endif; ?>
+		            <?php endif; ?>
                 </ul>
               </div>
             </nav>

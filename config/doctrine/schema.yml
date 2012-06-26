@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Modulo:
   columns:
     nombre:         { type: text, notnull: true }
@@ -107,3 +108,112 @@ Carrera:
 
 
 
+=======
+Modulo:
+  columns:
+    nombre:         { type: text, notnull: true }
+
+Grupo:
+  columns:
+    nombre:         { type: text, notnull: true }
+    modulo_id:      { type: integer, notnull: true }
+    tutor_id:       { type: integer, notnull: true }
+  relations:
+    Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id }
+    Tutor:          { onDelete: CASCADE, local: tutor_id, foreign: id }
+
+Alumno:
+  columns:
+    user_id:        { type: integer, notnull: true, unique: true }
+    carrera:        { type: text, notnull: true }
+    matricula:      { type: varchar(10), notnull: true }
+    grupo_id:       { type: integer, notnull: false }
+  relations:
+    sfGuardUser:    { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id, foreignType: one, foreignAlias: Alumno }
+    Grupo:          { onDelete: CASCADE, local: grupo_id, foreign: id }
+
+  # usuario_perfil integer NOT NULL,
+  # usuario_estado integer NOT NULL,
+
+Tutor:
+  columns:
+    nombre:         { type: text, notnull: true }
+    apellido:       { type: text, notnull: true }
+    email:          { type: text, notnull: true }
+
+Lesson:
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: text, notnull: true }
+    modulo_id:      { type: integer, notnull: true }
+  relations:
+    Modulo:         { onDelete: CASCADE, local: modulo_id, foreign: id }
+
+Quiz:
+  columns:
+    fecha_at:       { type: date, notnull: true }
+    hora_ini:       { type: time, notnull: true }
+    hora_fin:       { type: time, notnull: true }
+    cupo:           { type: integer, notnull: true }
+    lesson_id:      { type: integer, notnull: true }
+  relations:
+    Lesson:         { onDelete: CASCADE, local: lesson_id, foreign: id }
+    Laboratorio:
+      alias: Laboratorios
+      refClass: LaboratorioQuiz
+      local: quiz_id
+      foreign: laboratorio_id
+
+Laboratorio:
+  columns:
+    nombre:         { type: text, notnull: true }
+    capacidad:      { type: integer, notnull: true }
+  relations:
+    Quiz:
+      alias: Quizs
+      refClass: LaboratorioQuiz
+      local: laboratorio_id
+      foreign: quiz_id
+
+TutorQuiz:
+  columns:
+    tutor_id:     { type: integer, notnull: true }
+    quiz_id:      { type: integer, notnull: true }
+  relations:
+    Tutor:        { alias: tutor, local: tutor_id, foreign: id, onDelete: CASCADE }
+    Quiz:         { alias: quiz, local: quiz_id, foreign: id, onDelete: CASCADE }
+  indexes:
+    tutor_quiz_index:
+      fields:     [tutor_id,quiz_id]
+      type:       unique
+
+AlumnoQuiz:
+  columns:
+    alumno_id:    { type: integer, notnull: true }
+    quiz_id:      { type: integer, notnull: true }
+  relations:
+    Alumno:       { alias: alumno, local: alumno_id, foreign: id, onDelete: CASCADE }
+    Quiz:         { alias: quiz, local: quiz_id, foreign: id, onDelete: CASCADE }
+  indexes:
+    alumno_quiz_index:
+      fields:     [alumno_id,quiz_id]
+      type:       unique
+
+LaboratorioQuiz:
+  columns:
+    laboratorio_id:     { type: integer, notnull: true }
+    quiz_id:            { type: integer, notnull: true }
+  relations:  
+    Laboratorio:        { alias: laboratorio, local: laboratorio_id, foreign: id, onDelete: CASCADE }
+    Quiz:               { alias: quiz, local: quiz_id, foreign: id, onDelete: CASCADE }
+  indexes:
+    laboratorio_quiz_index:
+      fields:     [laboratorio_id,quiz_id]
+      type:       unique
+
+
+
+
+
+
+>>>>>>> Listo Formulario de Inscripcion, falto agregar listado de carreras

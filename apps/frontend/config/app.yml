@@ -4,4 +4,4 @@
 # default values
 all:
   sf_guard_plugin:
-    success_signin_url:      alumno/index
+    success_signin_url:      alumno/home

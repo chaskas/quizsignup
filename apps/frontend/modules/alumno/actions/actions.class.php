@@ -33,41 +33,14 @@ class alumnoActions extends sfActions
     $this->setTemplate('new');
   }
 
-  public function executeEdit(sfWebRequest $request)
-  {
-    $this->forward404Unless($alumno = Doctrine_Core::getTable('Alumno')->find(array($request->getParameter('id'))), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
-    $this->form = new AlumnoForm($alumno);
-  }
-
-  public function executeUpdate(sfWebRequest $request)
-  {
-    $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
-    $this->forward404Unless($alumno = Doctrine_Core::getTable('Alumno')->find(array($request->getParameter('id'))), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
-    $this->form = new AlumnoForm($alumno);
-
-    $this->processForm($request, $this->form);
-
-    $this->setTemplate('edit');
-  }
-
-  public function executeDelete(sfWebRequest $request)
-  {
-    $request->checkCSRFProtection();
-
-    $this->forward404Unless($alumno = Doctrine_Core::getTable('Alumno')->find(array($request->getParameter('id'))), sprintf('Object alumno does not exist (%s).', $request->getParameter('id')));
-    $alumno->delete();
-
-    $this->redirect('alumno/index');
-  }
-
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
       $alumno = $form->save();
-
-      $this->redirect('alumno/edit?id='.$alumno->getId());
+      $this->getUser()->signIn($this->form->getObject()->getSfGuardUser());
+      $this->redirect('@homepage');
     }
   }
   public function executePreInscription(sfWebRequest $request)

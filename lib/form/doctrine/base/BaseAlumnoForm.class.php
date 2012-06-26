@@ -19,7 +19,7 @@ abstract class BaseAlumnoForm extends BaseFormDoctrine
       'user_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
       'carrera'   => new sfWidgetFormInputText(),
       'matricula' => new sfWidgetFormInputText(),
-      'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => false)),
+      'grupo_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -27,7 +27,7 @@ abstract class BaseAlumnoForm extends BaseFormDoctrine
       'user_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
       'carrera'   => new sfValidatorPass(),
       'matricula' => new sfValidatorPass(),
-      'grupo_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'))),
+      'grupo_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Grupo'), 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
