@@ -13,6 +13,7 @@ TAREAS POR REALIZAR:
 - Tutor ve/descarga listas de alumnos inscritos para un Quiz
 - JS: rellena datos AlumnoForm llamando webservice
 - Usuario ListasEduc descarga listas 
+- Al eliminar un alumno, se debe eliminar al userguard tambien
 
 
 
