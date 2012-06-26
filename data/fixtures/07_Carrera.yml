@@ -46,138 +46,112 @@ Carrera:
   c23:
     nombre: Ingeniería Civil   
   c24:
-    nombre: Primer Año Común
+    nombre: Primer Año Común Ingeniería Civil     
   c25:
-    nombre: Ingeniería Civil 	  
-  c26:
     nombre: Ingeniería Civil Aeroespacial
-  c27:
+  c26:
     nombre: Ingeniería Civil Biomédica
-  c28:
+  c27:
     nombre: Ingeniería Civil Eléctrica
-  c29:
+  c28:
     nombre: Ingeniería Civil Electrónica
-  c30:
+  c29:
     nombre: Ingeniería Civil de Materiales
-  c31:
+  c30:
     nombre: Ingeniería Civil en Telecomunicaciones
-  c32:
+  c31:
     nombre: Ingeniería Civil Industrial
-  c33:
+  c32:
     nombre: Ingeniería Civil Informática
-  c34:
+  c33:
     nombre: Ingeniería Civil Matemática
-  c35:
+  c34:
     nombre: Ingeniería Civil Mecánica
-  c36:
+  c35:
     nombre: Ingeniería Civil Metalúrgica
-  c37:
+  c36:
     nombre: Ingeniería Civil Química
+  c37:
+    nombre: Ingeniería Comercial
   c38:
-    nombre: Ingeniería Comercial
-  c39:
     nombre: Ingeniería en Conservación de Recursos Naturales
-  c40:
+  c39:
     nombre: Ingeniería en Biotecnología Marina y Acuicultura
+  c40:
+    nombre: Ingeniería en Biotecnología Vegetal
   c41:
-    nombre: Ingeniería en Biotecnología Vegetal
-  c42:
     nombre: Ingeniería Estadística
-  c43:
+  c42:
     nombre: Ingeniería Forestal
-  c44:
+  c43:
     nombre: Kinesiología
-  c45:
+  c44:
     nombre: Licenciatura en Historia
-  c46:
+  c45:
     nombre: Licenciatura en Matemática
-  c47:
+  c46:
     nombre: Licenciatura en Química  
-  c48:
+  c47:
     nombre: Químico
-  c49:
+  c48:
     nombre: Medicina
+  c49:
+    nombre: Medicina Veterinaria    
   c50:
-    nombre: Medicina Veterinaria 	  
-  c51:
     nombre: Nutrición y Dietética
-  c52:
+  c51:
     nombre: Obstetricia y Puericultura
-  c53:
+  c52:
     nombre: Odontología
-  c54:
+  c53:
     nombre: Pedagogía en Artes Plásticas
-  c55:
+  c54:
     nombre: Pedagogía en Cs. Naturales y Biología
-  c56:
+  c55:
     nombre: Pedagogía en Cs. Naturales y Física
-  c57:
+  c56:
     nombre: Pedagogía en Cs. Naturales y Química
-  c58:
+  c57:
     nombre: Pedagogía en Ed. Física
-  c59:
+  c58:
     nombre: Pedagogía en Ed. Musical
-  c60:
+  c59:
     nombre: Pedagogía en Español
-  c61:
+  c60:
     nombre: Pedagogía en Filosofía
-  c62:
+  c61:
     nombre: Pedagogía en Historia y Geografía
-  c63:
+  c62:
     nombre: Pedagogía en Inglés
-  c64:
+  c63:
     nombre: Pedagogía en Matemática y Computación
-  c65:
+  c64:
     nombre: Periodismo
-  c66:
+  c65:
     nombre: Psicología
-  c67:
+  c66:
     nombre: Química y Farmacia
-  c68:
+  c67:
     nombre: Químico Analista
-  c69:
+  c68:
     nombre: Sociología
-  c70:
+  c69:
     nombre: Tecnología Médica
-  c71:
+  c70:
     nombre: Trabajo Social
-  c72:
+  c71:
     nombre: Traducción/Interpretación en Idiomas Extranjeros
-  c73:
+  c72:
     nombre: Agronomía
-  c74:
-    nombre: Derecho
-  c75:
+  c73:
     nombre: Ingeniería Agroindustrial
-  c76:
-    nombre: Ingeniería Ambiental
-  c77:
+  c74:
     nombre: Ingeniería Civil Agrícola
-  c78:
-    nombre: Ingeniería Comercial
-  c79:
+  c75:
     nombre: Ingeniería en Alimentos
-  c80:
-    nombre: Medicina Veterinaria
-  c81:
-    nombre: Auditoría   
-  c82:
-    nombre: Diurna
-  c83:
-    nombre: Educación Básica
-  c84:
-    nombre: Educación Diferencial
-  c85:
-    nombre: Educación Parvularia
-  c86:
-    nombre: Ingeniería Comercial
-  c87:
-    nombre: Ingeniería en Biotecnología Vegetal
-  c88:
+  c76:
     nombre: Ingeniería en Prevención de Riesgos
-  c89:
+  c77:
     nombre: Ingeniería Geomática
-  c90:
-    nombre: Pedagogía en Ciencias Naturales y Biología
-  c91:
+  c78:
     nombre: Pedagogía en Matemática y Educación Tecnológica
